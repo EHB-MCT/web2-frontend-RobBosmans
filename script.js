@@ -3,8 +3,8 @@
 refreshToken = "c6d059e946455c72bfdaa2a4f78e8172c7a200a5";
 
 window.onload = function(){
-    
-    getNewAccessToken();
+    inputs();
+    //getNewAccessToken();
 };
 
 async function getRoutes(data){
@@ -74,4 +74,20 @@ function leafletMap(data){
         ).addTo(map);
     }
 }
+
+function inputs(){
+    document.getElementById('mainForm').addEventListener('submit', event => {
+        event.preventDefault();
+
+        let stravaId = document.getElementById('stravaId').value;
+        let distance = document.getElementById('distanceOptions').value;
+        let elevation = document.getElementById('elevationOptions').value;
+
+        console.log(stravaId, distance, elevation);
+
+        getNewAccessToken();
+    });
+}
+
+
 

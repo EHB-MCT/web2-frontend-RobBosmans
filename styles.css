@@ -1,3 +1,118 @@
+*{
+    font-family: forma-djr-deck, sans-serif;
+    margin: 0;
+}
+
+
+body{
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-image: url(./pictures/forest.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    font-weight: medium;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+/* -------------------- form --------------------*/
+
+.form{
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+form {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    
+}
+
+input[type=text]{
+    box-sizing: border-box;
+    border: 2px solid #717171;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px 0;
+    background-color: none;
+
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+
+input[type=text]:focus {
+    outline: none;
+    border: 2px solid #000;
+}
+
+#distance, #elevation{
+    width: 216px;
+    text-align: center;
+}
+
+select{
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 2px solid #717171;
+    color: #717171;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px 0;
+
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+
+select:focus {
+    transition: ease 100ms;
+    outline: none;
+    border: 2px solid #000;
+    color: #000;
+}
+
+.button{
+    cursor: pointer;
+    color: #fff;
+    background-color: #000;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin: 10px 0;
+    width: 216px;
+
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.button:hover{
+    transition: ease 100ms;
+    color: white;
+    background-color: #E34A00;
+    border: 2px solid #E34A00;
+    padding: 5px 20px;
+    margin: 10px 0;
+}
+
+
+
 #map { 
     height: 1000px;
     width: 1000px;
