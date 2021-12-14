@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/rht0mff.css">
+
+    <!-- scripts -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <script src="./libraries/Polyline.encoded.js"></script>
+    <script src="main.js"></script>
+
+    <title>Plan a ride</title>
+</head>
+<body>
+    <div class="form">
+        <h1>Welcome to<br>plan a ride</h1>
+        <form id="mainForm">
+            <div id="stravaIdInput">
+                <input id="stravaId" type="text" placeholder="Strava ID">
+            </div>
+            <div id="distance">
+                <label for="">Select distance: </label>
+                <select id="distanceOptions">
+                    <option value="50">50</option>
+                    <option value="80">80</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                </select>
+            </div>
+            <div id="elevation">
+                <label for="">Select elevation: </label>
+                <select id="elevationOptions" name="cars">
+                    <option value="flat">Flat</option>
+                    <option value="hilly">Hilly</option>
+                </select>
+            </div>
+            <div>
+                <button class="button" type="submit">Ready</button>
+            </div>
+        </form>
+    </div>
+    <div id="map"></div>
+</body>
+</html>
