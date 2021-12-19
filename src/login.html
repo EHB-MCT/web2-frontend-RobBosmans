@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+
+    <!--<link rel="stylesheet" href="styles.css">-->
+    <link rel="stylesheet" href="/docs/styles.css">
+
+    <script src="login.js"></script>
     <title>Login</title>
 </head>
 <body>
-    <div class="form">
+    <div class="form" autocomplete="off">
         <h1>Welcome to<br>plan a ride</h1>
         <p id="loginText">Login or if you don't have an account <br>it will automaticly create one</p>
-        <form id="mainForm">
+
+        <form id="loginForm">
             <div id="firstnameDiv">
-                <label for="">Firstname: </label>
-                <input id="firstname" type="text">
-            </div>
-            <div id="lastnameDiv">
-                <label for="">Lastname: </label>
-                <input id="lastname" type="text">
+                <label for="">Name: </label>
+                <input id="username" type="text">
             </div>
             <div id="password">
                 <label for="">Password: </label>
@@ -28,6 +29,7 @@
                 <button id="loginButton" class="button" type="submit">Ready</button>
             </div>
         </form>
+        
     </div>
 </body>
 </html>
