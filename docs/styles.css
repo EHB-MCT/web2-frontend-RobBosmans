@@ -125,6 +125,19 @@ select:focus {
     width: 320px;
 }
 
+a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    
+}
+
+a:hover{
+    color: #E34A00;
+    text-decoration: underline;
+    transition: ease 100ms;
+}
+
 #map { 
     height: 1000px;
     width: 1000px;

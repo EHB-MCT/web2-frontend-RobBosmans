@@ -7,16 +7,24 @@ window.onload = function(){
 
 function checkInputs(data){
     for(let i of data){
-        if(username = i.name){
-            if (password = i.password){
+        if(username == i.name){
+            
+            if (password == i.password){
                 console.log("correct");
+                document.location.href = "http://127.0.0.1:5500/docs/index.html";
             } else{
                 console.log("wrong password");
-            }
+                document.getElementById('message').insertAdjacentHTML("beforebegin",
+                    "<p>Password is incorrect</p>"
+                );
+            };
         } else{
             console.log("wrong username");
-        }
-    }
+            document.getElementById('message').insertAdjacentHTML("beforebegin",
+                    "<p>Name is incorrect</p>"
+                );
+        };
+    };
     
 };
 
