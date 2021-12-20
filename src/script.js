@@ -2,23 +2,24 @@
 
 refreshToken = "c6d059e946455c72bfdaa2a4f78e8172c7a200a5";
 
+let stravaId = "";
+let randomRoute = [];
+
 window.onload = function(){
+    document.getElementById('map').style.display = "none";
     inputs();
-    //getNewAccessToken();
 };
 
 async function getRoutes(data){
-
     //fetch routes
-    let response = await fetch(`https://www.strava.com/api/v3/athletes/15412454/routes?access_token=${data.access_token}`);
+    let response = await fetch(`https://www.strava.com/api/v3/athletes/${stravaId}/routes?access_token=${data.access_token}`);
     return await response.json()
     .then(data => {
-        leafletMap(data);
+        getRandomRoute(data);
     });
 };
 
 function getNewAccessToken(){
-
     //Access Token expires so needs to be refreched by using the refresh token. 
     //code from postman
     var myHeaders = new Headers();
@@ -38,12 +39,14 @@ function getNewAccessToken(){
     .catch(error => console.log('error', error));
 };
 
-function leafletMap(data){
+function leafletMap(){
+    
+    document.getElementById('form').style.display = "none";
+    document.getElementById('map').style.display = "block";
 
     //code from leafletjs.com
     //creates map
-    let map = L.map('map').setView([50.7889886,4.168973,11], 11);
-
+    let map = L.map('map').setView([50.7889886,4.168973,11], 10);
     //uses mapbox
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -59,35 +62,60 @@ function leafletMap(data){
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map); */
 
-    for(let i=0; i < 5; i++){
+    let coordinates = L.Polyline.fromEncoded(randomRoute.map.summary_polyline).getLatLngs()
+    //console.log(coordinates);
 
-        let coordinates = L.Polyline.fromEncoded(data[i].map.summary_polyline).getLatLngs()
-        console.log(coordinates);
+    L.polyline(coordinates,
+        {
+            color: "#FC5200",
+            weight: 2,
+            lineJoin: "round"
+        }).addTo(map);
 
-        L.polyline(
-            coordinates,
-            {
-                color: "#FC5200",
-                weight: 2,
-                lineJoin: "round"
-            }
-        ).addTo(map);
-    }
+    document.getElementById('map').insertAdjacentHTML('afterend', 
+        `<div id="routeInfo">
+            <ul>
+                <li>${randomRoute.name}</li>
+                <li>${Math.round((randomRoute.distance)/1000)}km</li>
+                <li>${Math.round(randomRoute.elevation_gain)}m</li>
+            </ul>
+            <button class="button" id="anotherRouteButton">Give me another one!</button>
+        </div>`
+    );
+    document.getElementById('routeInfo').addEventListener('click', e =>{
+        e.preventDefault();
+        console.log("dddd")
+        map.remove();
+        document.getElementById('routeInfo').remove();
+        getNewAccessToken();
+    });
+};
+
+function getRandomRoute(data){
+    randomRoute = data[Math.floor(Math.random() * 30)];
+    console.log("random",randomRoute);
+    leafletMap();
 }
 
 function inputs(){
-    document.getElementById('mainForm').addEventListener('submit', event => {
-        event.preventDefault();
+    document.getElementById('mainForm').addEventListener('submit', e => {
+        e.preventDefault();
 
-        let stravaId = document.getElementById('stravaId').value;
-        let distance = document.getElementById('distanceOptions').value;
-        let elevation = document.getElementById('elevationOptions').value;
-
-        console.log(stravaId, distance, elevation);
-
-        getNewAccessToken();
+        stravaId = document.getElementById('stravaId').value;
+        if(stravaId == 0){
+            document.getElementById('message').insertAdjacentHTML("beforebegin",
+                "<p>Wrong strava ID</p>"
+            );
+        }else{
+            getNewAccessToken();
+        }
     });
 }
 
-
-
+function anotherRandomRoute(){
+    document.getElementById('routeInfo').addEventListener('click', e =>{
+        e.preventDefault();
+        console.log("dddd")
+        location.reload();
+    });
+}

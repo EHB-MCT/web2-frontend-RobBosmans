@@ -17,38 +17,27 @@
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
     <script src="./libraries/Polyline.encoded.js"></script>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script src="../src/script.js"></script>
 
-    <title>Plan a ride</title>
+    <title>Where to ride</title>
 </head>
 <body>
-    <div class="form">
-        <h1>Welcome to<br>plan a ride</h1>
+    <div class="form" id="form">
+        <h1>Welcome to<br>Where to ride?</h1>
+        <p>Dont know what route to ride? <br>Enter your strava ID and <br>pick a random one!</p>
         <form id="mainForm">
             <div id="stravaIdInput">
                 <input id="stravaId" type="text" placeholder="Strava ID">
             </div>
-            <div id="distance">
-                <label for="">Select distance: </label>
-                <select id="distanceOptions">
-                    <option value="50">50</option>
-                    <option value="80">80</option>
-                    <option value="100">100</option>
-                    <option value="200">200</option>
-                </select>
-            </div>
-            <div id="elevation">
-                <label for="">Select elevation: </label>
-                <select id="elevationOptions" name="cars">
-                    <option value="flat">Flat</option>
-                    <option value="hilly">Hilly</option>
-                </select>
-            </div>
+            <div id="message"></div>
             <div>
-                <button class="button" type="submit">Ready</button>
+                <button class="button" type="submit">Give me a route!</button>
             </div>
         </form>
     </div>
-    <div id="map"></div>
+    <div id="routesPage">
+        <div id="map"></div>
+    </div>
 </body>
 </html>

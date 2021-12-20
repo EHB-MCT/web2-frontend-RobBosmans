@@ -138,7 +138,40 @@ a:hover{
     transition: ease 100ms;
 }
 
-#map { 
-    height: 1000px;
-    width: 1000px;
+/* -------------------- map --------------------*/
+
+#routesPage {
+    display: block;
+    max-width: 80%;
+}
+
+#map {
+    height: 800px;
+    width: 1200px;
+    background-color: #fff;
+    border: 2px solid #717171;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 0;
+}
+
+#routeInfo {
+    overflow: hidden;
+}
+
+#routeInfo ul{
+    text-decoration: none;
+    background-color: #fff;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 10px;
+    list-style: none;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#routeInfo li{
+    padding: 5px;
+    display: inline;
 }
