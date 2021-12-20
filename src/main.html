@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link rel="stylesheet" href="../docs/styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/rht0mff.css">
+
+    <!-- scripts -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <script src="./libraries/Polyline.encoded.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script src="script.js"></script>
+
+    <title>Where to ride</title>
+</head>
+<body>
+    <div class="form" id="form">
+        <h1>Welcome to<br>Where to ride?</h1>
+        <p>Dont know what route to ride? <br>Enter your strava ID and <br>pick a random one!</p>
+        <form id="mainForm">
+            <div id="stravaIdInput">
+                <input id="stravaId" type="text" placeholder="Strava ID">
+            </div>
+            <div id="message"></div>
+            <div>
+                <button class="button" type="submit">Give me a route!</button>
+            </div>
+        </form>
+    </div>
+    <div id="routesPage">
+        <div id="map"></div>
+    </div>
+</body>
+</html>
