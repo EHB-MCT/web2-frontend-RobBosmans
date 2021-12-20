@@ -1,0 +1,10 @@
+Instructions:
+- You can create an account
+- You will need a strava ID, you can use mine for testing: 15412454
+
+Sources:
+- Strava API Tutorial: https://www.youtube.com/watch?v=sgscChKfGyg by: franchyze923
+- Web 2 Grouppproject Own: mostly for backend
+- Web 2 Groupproject Teacher: Put request
+- Leaflett: for maps
+- Polyline decoder: https://github.com/jieter/Leaflet.encoded by: jieter
