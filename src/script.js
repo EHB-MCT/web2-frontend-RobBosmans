@@ -159,7 +159,7 @@ async function saveRoute(){
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error))
-    .then(document.location.href = "http://127.0.0.1:5500/src/end.html");
+    .then(document.location.href = "end.html");
 }
 
 function secondsToHms() {
