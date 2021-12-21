@@ -13,22 +13,10 @@ function loginInputs(){
         password = document.getElementById('password').value;
 
         saveUser();
-        window.localStorage.setItem("username", username);
-        window.localStorage.setItem("password", password);
-        document.location.href = "http://127.0.0.1:5500/src/main.html";
     });
 }
 
-async function getUser(){
-    let response = await fetch(`https://stravaroutesapp.herokuapp.com/login`);
-    return await response.json()
-    .then(data => {
-        checkInputs(data);
-    });
-};
-
 async function saveUser(){
-    //code from postman
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -47,5 +35,6 @@ async function saveUser(){
     fetch("https://stravaroutesapp.herokuapp.com/login", requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+    .catch(error => console.log('error', error))
+    .then(document.location.href = "http://127.0.0.1:5500/docs/index.html");
 }

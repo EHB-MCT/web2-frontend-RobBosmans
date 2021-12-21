@@ -19,22 +19,28 @@
     <script src="./libraries/Polyline.encoded.js"></script>
     <!-- <script src="main.js"></script> -->
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/d2b254cfae.js" crossorigin="anonymous"></script>
 
-    <title>Where to ride</title>
+    <title>Random Strava Route</title>
 </head>
 <body>
-    <div class="form" id="form">
-        <h1>Welcome to<br>Where to ride?</h1>
-        <p>Dont know what route to ride? <br>Enter your strava ID and <br>pick a random one!</p>
-        <form id="mainForm">
-            <div id="stravaIdInput">
-                <input id="stravaId" type="text" placeholder="Strava ID">
-            </div>
-            <div id="message"></div>
-            <div>
-                <button class="button" type="submit">Give me a route!</button>
-            </div>
-        </form>
+    <div id="pageDiv">
+        <div class="form" id="form">
+            <h1>Welcome to,<br>What route <br> to ride?</h1>
+            <p>Dont know what route to ride? <br>Enter your strava ID and pick a random one!</p>
+            <form id="mainForm">
+                <div id="stravaIdInput">
+                    <input id="stravaId" type="text" placeholder="Strava ID">
+                </div>
+                <div id="message"></div>
+                <div>
+                    <button class="button" type="submit">Give me a route!</button>
+                </div>
+            </form>
+        </div>
+        <div class="image" id="column2">
+            <img src="../src/images/jens-herrndorff-Rou_ddB3t4w-unsplash.jpeg" alt="" srcset="">
+        </div>
     </div>
     <div id="routesPage">
         <div id="map"></div>

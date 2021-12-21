@@ -1,5 +1,6 @@
 let username = "";
 let password = "";
+let id = "";
 
 window.onload = function(){
     loginInputs();
@@ -10,10 +11,12 @@ function checkInputs(data){
         if(username == i.name){
             
             if (password == i.password){
+                id = i._id;
+                console.log("id", id)
                 console.log("correct");
+                window.localStorage.setItem("id", id);
                 document.location.href = "http://127.0.0.1:5500/src/main.html";
-                window.localStorage.setItem("username", username);
-                window.localStorage.setItem("password", password);
+                
             } else{
                 console.log("wrong password");
                 document.getElementById('message').insertAdjacentHTML("beforebegin",
@@ -38,6 +41,9 @@ function loginInputs(){
         username = document.getElementById('username').value;
         password = document.getElementById('password').value;
         getUser();
+
+        window.localStorage.setItem("username", username);
+        window.localStorage.setItem("password", password);
     });
 }
 
@@ -48,22 +54,3 @@ async function getUser(){
         checkInputs(data);
     });
 };
-
-async function saveUser(){
-    let newUser = {
-        name: username,
-        password: password
-    }
-
-    fetch(`https://stravaroutesapp.herokuapp.com/login`, {
-        method: "POST",
-        body: JSON.stringify({
-            name: username,
-            password: password
-        })
-    }).then(response => {
-        return response.json()
-    }).then(async data => {
-        console.log("succes!", data);
-    })
-}

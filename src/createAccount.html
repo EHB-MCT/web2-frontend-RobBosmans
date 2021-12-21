@@ -9,28 +9,31 @@
     <link rel="stylesheet" href="/docs/styles.css">
 
     <script src="createUser.js"></script>
-    <title>Login</title>
+    <title>Create account</title>
 </head>
 <body>
-    <div class="form" autocomplete="off">
-        <h1>Welcome to<br>plan a ride</h1>
-        <p id="loginText">Login</p>
-
-        <form id="createUserForm">
-            <div id="firstnameDiv">
-                <label for="">Name: </label>
-                <input id="username" type="text">
-            </div>
-            <div id="passwordDiv">
-                <label for="">Password: </label>
-                <input id="password" type="password">
-            </div>
-            <div>
-                <button id="createUserButton" class="button" type="submit">Create account</button>
-            </div>
-            <p><a href="../docs/index.html">Already have an account?</a></p>
-        </form>
-        
+    <div id="loginPage">
+        <div class="form" autocomplete="off" id="column1">
+            <h1>Welcome to,<br>What route <br> to ride?</h1>
+            <form id="createUserForm">
+                <div id="firstnameDiv">
+                    <input id="username" type="text" placeholder="username">
+                </div>
+                <div id="passwordDiv">
+                    <input id="password" type="password" placeholder="password">
+                </div>
+                <div id="message"></div>
+                <div>
+                    <button id="createUserButton" class="button" type="submit">Create Account</button>
+                </div>
+                <div id="createAccountLink">
+                    <p>Already have an account?<a href="../docs/index.html"> Log In</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="image" id="column2">
+            <img src="../src/images/markus-gempeler-63p47XdyEdM-unsplash.jpeg" alt="" srcset="">
+        </div>
     </div>
 </body>
 </html>

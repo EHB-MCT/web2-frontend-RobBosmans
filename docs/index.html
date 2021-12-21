@@ -12,25 +12,28 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="form" autocomplete="off">
-        <h1>Welcome to<br>plan a ride</h1>
-        <p id="loginText">Login</p>
-
-        <form id="loginForm">
-            <div id="firstnameDiv">
-                <label for="">Name: </label>
-                <input id="username" type="text">
-            </div>
-            <div id="passwordDiv">
-                <label for="">Password: </label>
-                <input id="password" type="password">
-            </div>
-            <div id="message"></div>
-            <div>
-                <button id="loginButton" class="button" type="submit">Login</button>
-            </div>
-            <p><a href="../src/createAccount.html">Or create one</a></p>
-        </form>
+    <div id="loginPage">
+        <div class="form" autocomplete="off" id="column1">
+            <h1>Welcome to,<br>What route <br> to ride?</h1>
+            <form id="loginForm">
+                <div id="firstnameDiv">
+                    <input id="username" type="text" placeholder="username">
+                </div>
+                <div id="passwordDiv">
+                    <input id="password" type="password" placeholder="password">
+                </div>
+                <div id="message"></div>
+                <div>
+                    <button id="loginButton" class="button" type="submit">Log In</button>
+                </div>
+                <div id="createAccountLink">
+                    <p>Don't have an account yet?<a href="../src/createAccount.html"> Create one</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="image" id="column2">
+            <img src="../src/images/patrick-federi-rGg2Ws167Cg-unsplash.jpeg" alt="" srcset="">
+        </div>
     </div>
 </body>
 </html>
