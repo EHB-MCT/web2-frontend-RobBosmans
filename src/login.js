@@ -15,7 +15,7 @@ function checkInputs(data){
                 console.log("id", id)
                 console.log("correct");
                 window.localStorage.setItem("id", id);
-                window.location.href = "main.js";
+                window.location.href = "main.html";
                 
             } else{
                 console.log("wrong password");
