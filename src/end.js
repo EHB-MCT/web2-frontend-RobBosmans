@@ -13,12 +13,12 @@ function logout(){
     document.getElementById('logout').addEventListener('click', event => {
         event.preventDefault();
         window.localStorage.clear();
-        document.location.href = "http://127.0.0.1:5500/docs/index.html";
+        document.location.href = "index.html";
     });
 }
 
 async function weather(){
-    let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=6ff6455d459b79d14f52d648b450aefa&units=metric
+    let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=6ff6455d459b79d14f52d648b450aefa&units=metric
     `);
     return await response.json()
     .then(data => {
