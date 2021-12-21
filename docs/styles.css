@@ -5,39 +5,50 @@
 
 
 body{
-    margin-top: 100px;
+    /* margin-top: 100px;
     display: flex;
     justify-content: space-evenly;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    align-content: center;
-    background-color: rgb(36, 36, 36);
-    /* background-image: url(./pictures/forest.jpg);
-    background-repeat: no-repeat;
-    background-size: cover; */
-}
-
-h1{
-    font-weight: medium;
-    text-align: center;
-    text-transform: uppercase;
-
+    align-content: center; */
+    background-color: #1d1d1d;
 }
 
 p{
     font-weight: medium;
-    text-align: center;
 }
 
-#loginText{
-    margin: 10px 0;
+/* -------------------- loginpage --------------------*/
+
+#loginPage, #routesPage, #pageDiv{
+    display: flex;
+}
+
+.image{
+    overflow: hidden;
+    max-height: 1080px;
+}
+
+#column1, #form{
+    margin-top: 10%;
+    margin-left: 10%;
+    flex: 40%;
+}
+#column2{
+}
+
+h1{
+    font-weight: medium;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 40px;
 }
 
 /* -------------------- form --------------------*/
 
+
 .form{
-    background-color: white;
-    padding: 30px;
+    padding: 0;
     border-radius: 20px;
 }
 
@@ -45,114 +56,95 @@ form {
     text-decoration: none;
     font-weight: 500;
     font-size: 20px;
-    
 }
 
 input[type=text], input[type=password]{
+    background-color: #272727;
+    color: #585858;
     box-sizing: border-box;
-    border: 2px solid #717171;
+    border: 1px solid #585858;
     border-radius: 10px;
-    padding: 5px;
-    margin: 10px 0;
-    background-color: none;
+    padding: 8px 15px;
+    margin-top: 20px;
+    width: 80%;
 
     text-decoration: none;
     font-weight: 500;
     font-size: 20px;
-    text-align: center;
 }
 
 input[type=text]:focus, input[type=password]:focus {
     outline: none;
-    border: 2px solid #000;
-}
-
-#distance, #elevation{
-    width: 216px;
-    text-align: center;
-}
-
-select{
-    cursor: pointer;
-    box-sizing: border-box;
-    border: 2px solid #717171;
-    color: #717171;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 10px 0;
-
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 20px;
-    text-align: center;
-}
-
-select:focus {
-    transition: ease 100ms;
-    outline: none;
-    border: 2px solid #000;
-    color: #000;
+    color: #fff;
 }
 
 .button{
     cursor: pointer;
-    color: #fff;
-    background-color: #000;
-    border: 2px solid #000;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #fff;
     box-sizing: border-box;
     border-radius: 10px;
-    padding: 5px 20px;
-    margin: 10px 0;
-    width: 216px;
+    padding: 8px 20px;
+    margin-top: 20px;
+    width: 40%;
 
     text-decoration: none;
     font-weight: 500;
     font-size: 20px;
-    display: flex;
-    justify-content: center;
 }
 
 .button:hover{
     transition: ease 100ms;
     color: white;
     background-color: #E34A00;
-    border: 2px solid #E34A00;
-    padding: 5px 20px;
-    margin: 10px 0;
+    border: 1px solid #E34A00;
+    padding: 8px 20px;
 }
 
 #loginButton{
-    width: 320px;
+    width: 40%;
+}
+
+#createAccountLink{
+    margin-top: 20px;
+}
+
+#loginPage p, #pageDiv p{
+    margin-top: 20px;
+    font-weight: 500;
+    color: #585858;
+}
+
+#form p{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 a{
     font-size: 18px;
     text-decoration: none;
-    color: #000;
-    
+    color: #fff;
 }
 
 a:hover{
     color: #E34A00;
-    text-decoration: underline;
     transition: ease 100ms;
 }
 
 /* -------------------- map --------------------*/
 
-#routesPage {
+/* #routesPage {
     display: block;
     max-width: 80%;
-}
+} */
 
 #map {
-    height: 800px;
-    width: 1200px;
-    background-color: #fff;
-    border: 2px solid #717171;
-    box-sizing: border-box;
-    border-radius: 20px;
+    height: 1080px;
+    width: 1234px;
     margin: 0;
+    background-color: #1d1d1d;
 }
 
 #routeInfo {
@@ -160,11 +152,16 @@ a:hover{
 }
 
 #routeInfo ul{
-    text-decoration: none;
-    background-color: #fff;
-    border: 2px solid #000;
+    background-color: #272727;
+    color: #fff;
     box-sizing: border-box;
+    border: 1px solid #585858;
     border-radius: 10px;
+    padding: 8px 15px;
+    margin-top: 20px;
+    width: 80%;
+
+    text-decoration: none;
     padding: 10px;
     list-style: none;
     font-weight: 500;
@@ -172,6 +169,71 @@ a:hover{
 }
 
 #routeInfo li{
-    padding: 5px;
+    padding: 10px;
+}
+
+#anotherRouteButton{
+    background-color: #1d1d1d;
+    color: #fff;
+    width: 10%;
+}
+
+#anotherRouteButton:hover {
+    background-color: #E34A00;
+    color: #fff;
+    width: 10%;
+}
+
+#inlineLi{
     display: inline;
+}
+
+i{
+    margin-right: 8px;
+}
+
+/* -------------------- endscreen --------------------*/
+
+#weatherInfo{
+    background-color: #272727;
+    color: #fff;
+    box-sizing: border-box;
+    border: 1px solid #585858;
+    border-radius: 10px;
+    padding: 8px 15px;
+    margin-top: 20px;
+    width: 80%;
+    padding: 10px;
+}
+
+#weatherInfo ul{
+    text-decoration: none;
+    list-style: none;
+    font-weight: 500;
+    font-size: 18px;
+    padding-left: 0;
+}
+
+#weatherInfo li{
+    padding: 10px;
+}
+
+#inline{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#inline img{
+    object-fit: cover;
+}
+
+#downloadButton{
+    background-color: #1d1d1d;
+    color: #fff;
+}
+
+#downloadButton:hover {
+    background-color: #E34A00;
+    color: #fff;
 }
