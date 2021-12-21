@@ -139,16 +139,16 @@ function anotherRandomRoute(){
 }
 
 async function saveRoute(){
-    var myHeaders = new Headers();
+    let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify({
+    let raw = JSON.stringify({
     "name": username,
     "password": password,
     "routes": routeId
     });
 
-    var requestOptions = {
+    let requestOptions = {
     method: 'PUT',
     headers: myHeaders,
     body: raw,
@@ -163,10 +163,10 @@ async function saveRoute(){
 }
 
 function secondsToHms() {
-    var h = Math.floor(time / 3600);
-    var m = Math.floor(time % 3600 / 60);
+    let h = Math.floor(time / 3600);
+    let m = Math.floor(time % 3600 / 60);
 
-    var hDisplay = h + "h ";
-    var mDisplay = m + "m ";
+    let hDisplay = h + "h ";
+    let mDisplay = m + "m ";
     return hDisplay + mDisplay; 
 }
